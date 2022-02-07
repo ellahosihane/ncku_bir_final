@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+  <body>
+    {% extends "template.html" %}
+    {% set active_page = "index" %}
+    {% block content %}
+    <div class="document_full">
+    {% if KeyWord != "" %}
+      {% if rankDoc == [] %}
+        <p>Did you mean?</p>
+        {% for word in find %}
+        <form class="d-flex" method="post" action="{{ url_for('index') }}">
+          <input class = "link" type="submit" name = "Search" class="link" value="{{word|e}}">
+        </form>
+        {% endfor %}
+      {% else %}
+        {% for title in rankDoc %}
+          <form class="d-flex" method="post" action="{{ url_for('show') }}">
+            <h5><input class = "link" type="submit" name = "Article" class="link" value="{{title|e}}"></h5>
+          </form>
+          <span class="badge rounded-pill" style="background-color:#744253">{{ cate[title]|e }}</span>
+          <br>
+          {% for label, abs in full[title].items() %}
+            <b>{{ label|e }}:</b>
+            <p>{{ abs|e }}</p>
+          {% endfor %}
+        <br>
+      {% endfor %}
+      {% endif %}     
+    {% else %}
+      {% for key, value in full.items() %}
+        <form class="d-flex" method="post" action="{{ url_for('show') }}">
+          <h5><input class = "link" type="submit" name = "Article" class="link" value="{{key|e}}"></h5>
+        </form>
+        <span class="badge rounded-pill" style="background-color:#744253">{{ cate[key]|e }}</span>
+        <br>
+        {% for label, abs in value.items() %}
+          <b>{{ label|e }}:</b>
+          <p>{{ abs|e }}</p>
+        {% endfor %}
+      <br>
+      {% endfor %}
+      {% endif %}
+    </div>
+    {% endblock %}
+  </body>
+</html>

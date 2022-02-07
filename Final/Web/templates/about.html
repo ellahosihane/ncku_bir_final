@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+  <body>
+    {% extends "template.html" %}
+    {% set active_page = "about" %}
+    {% set KeyWord = "" %}
+    {% block content %}
+    <div class="document_full all">
+      <ul class="nav nav-pills btn mb-3" id="pills-tab" role="tablist">
+        <li class="nav-item" role="presentation">
+          <button class="nav-link active" id="cbow-tab" data-bs-toggle="pill" data-bs-target="#word2vec-cbow" type="button" role="tab" aria-controls="pills-home" aria-selected="true" >Word2Vec(using CBOW)</button>
+        </li>
+        <li class="nav-item" role="presentation">
+          <button class="nav-link" id="kmeans-tab" data-bs-toggle="pill" data-bs-target="#k-means" type="button" role="tab" aria-controls="pills-profile" aria-selected="false">Text clustering(with TF-IDF)</button>
+        </li>
+    </ul>
+    <div class="tab-content" id="pills-tabContent">
+        <div class="tab-pane fade show active" id="word2vec-cbow" role="tabpanel" aria-labelledby="cbow-tab" >
+          <div class = "row">
+            <div id="cbow" class="cbow" style="height: 1000px">
+            <script>
+              var data = {{dataJSON | safe}};
+              Plotly.plot( "cbow", data[0].data, data[0].layer, {});  
+            </script>
+            </div>
+          </div>
+        </div>
+        <div class="tab-pane fade active" id="k-means" role="tabpanel" aria-labelledby="kmeans-tab" >
+          <div class = "row">
+            <div id="kmeans" class="kmeans" style="height: 1000px">
+            <script>
+              var data = {{kmJSON | safe}};
+              Plotly.plot( "kmeans", data[0].data, data[0].layer, {});  
+            </script>
+            </div>
+          </div>
+        </div>
+    </div>
+    {% endblock %}
+  </body>
+</html>

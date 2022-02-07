@@ -1,0 +1,134 @@
+/* 整體*/
+body {
+    height:100%;
+}
+.topnav{
+    background-color: #B49286;
+    border-color: #EEE4E1;
+    height: 50px;
+    font-size: large;
+}
+.covidnav{
+    margin-left:15%;
+    margin-top: 50px;
+}
+.virusnav{
+    margin-left:58%;
+    margin-top:50px;
+}
+.leftnav{
+    background-color: #D7BEA8;
+    margin-top:50px;
+    width:14%;
+    height:100%;
+    font-size: 20px;
+}
+
+.left{
+    background-color: #D7BEA8;
+    color: #EEE4E1;
+}
+
+.left-active{
+    background-color: #D7BEA8;
+    color: #744253;
+}
+
+.left-active:hover{
+    background-color: #D7BEA8;
+    color: #744253;
+}
+
+.left:hover{
+    background-color: #D7BEA8;
+    color: #744253;
+}
+
+.cf_leftnav{
+    margin-left:20px;
+    margin-top:20px
+}
+.document_left{
+    width:43%;
+    height:93%;
+    margin-top:50px;
+    margin-left:14%;
+    padding: 20px;
+    padding-top: 30px;
+    position:absolute;
+    overflow-y: scroll;
+}
+.document_right{
+    width:43%;
+    height:93%;
+    margin-top:50px;
+    margin-left:57%;
+    padding: 20px;
+    padding-top: 30px;
+    position:absolute;
+    overflow-y: scroll;
+}
+.document_full{
+    background-color: #fff8f9;
+    width:86%;
+    height:93%;
+    margin-top:50px;
+    margin-left:14%;
+    padding: 20px;
+    position:absolute;
+    overflow-y: scroll;
+}
+.ellipsis {
+    overflow:hidden;
+    white-space: nowrap;
+    text-overflow: ellipsis;
+}
+
+.link{
+    background: none;
+    border: none;
+    padding: 0;
+    text-decoration: underline;
+}
+.link:visited {
+    color: #744253;
+    background: none;
+    border: none;
+    padding: 0;
+    text-decoration: underline;
+}
+.link:active{
+    color: #e4c9cc;
+    background: none;
+    border: none;
+    padding: 0;
+    text-decoration: underline;
+}
+.link:hover{
+    color: #D7BEA8;
+    background: none;
+    border: none;
+    padding: 0;
+    text-decoration: underline;
+}
+.nav-btn {
+    background-color: #e4c9cc;
+    color: #5c5655;
+}
+
+.nav-btn:hover {
+    background-color: #744253;
+    color: white;
+}
+.nav-pills .nav-item .nav-link{          
+    border: none;
+    color: #744253;
+    text-align: center;
+}
+
+.nav-pills .nav-item.show .nav-link, .nav-pills .nav-link.active{
+    background-color: #e4c9cc;
+    border: none;
+    color: #5c5655;
+    text-align: center;
+}
